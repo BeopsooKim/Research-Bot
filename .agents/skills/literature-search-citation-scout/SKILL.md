@@ -83,6 +83,8 @@ Use available web/search/library tools when:
 
 If no search tool is available, say so and ask the user to provide papers or allow a search-capable environment. Do not invent.
 
+Default operating mode is still `manuscript-first` unless the user explicitly asks for source verification, recent work, exact metadata, or broader literature expansion.
+
 ## Source authority hierarchy
 
 Prefer:
@@ -112,22 +114,103 @@ When the user relies on one paper, look for:
 - Contradictory results.
 - More recent or more authoritative sources.
 
+## Three-question verification protocol
+
+For every citation, standard, or related-work claim, separate these questions:
+
+1. **Existence**
+   - Is the source real and is the metadata exact?
+2. **Support**
+   - Does the source support the exact claim being made, or only a weaker/adjacent claim?
+3. **Proximity**
+   - Is the source close enough in domain, operating regime, and problem framing to justify the manuscript's positioning?
+
+Do not report a source as `good` unless all three questions are addressed.
+
+## Verification status protocol
+
+Tag every source or claim as exactly one of:
+
+- `verified`: exact metadata or source content was checked directly
+- `manuscript-only`: judgment comes only from the manuscript text or a user-supplied citation string
+- `unverifiable`: the source cannot currently be checked with confidence
+
+For each source, also state a `Safe claim boundary`:
+- what this source lets the user claim now
+- what it does not justify yet
+
+## Source burden decision rule
+
+- If the claim is about the current paper's own runtime, accuracy, feasibility, or robustness, the burden is on internal evidence, not on literature.
+- If the claim is about novelty, positioning, or precedent, the burden is on the closest domain literature.
+- If the claim is generic method background, adjacent methodological support may be enough, but label it as background rather than direct precedent.
+
+## Low-RAG operating mode
+
+When external search is unavailable or intentionally minimized, do not stop thinking. Instead:
+
+- classify each cited source or needed source as `direct domain support`, `adjacent methodological support`, `generic background`, or `unverifiable from manuscript alone`
+- explain what the manuscript can safely claim using only that level of support
+- mark which gaps require later verification rather than inventing certainty
+
+This skill must remain useful even without a large external reference library.
+
+## Search escalation ladder
+
+- Level 0 `manuscript-first`: classify the current citations and identify claim-boundary risk without searching.
+- Level 1 `metadata verify`: verify exact source existence when the user asks for exactness or a citation looks suspicious.
+- Level 2 `targeted proximity verify`: verify the few sources that could materially change the positioning judgment.
+- Level 3 `optional expansion`: expand to a broader literature sweep only when the user explicitly asks for more sources or a deeper survey.
+
+Default shortlist size is 3-5 sources. Put anything beyond that under `Optional expansion`.
+
+## Domain-proximity escalation
+
+Escalate and search for closer literature when any of these occur:
+
+- a generic algorithm paper is used to justify a domain-specific novelty claim
+- a microgrid result is being stretched to a VPP market-operations claim without explanation
+- a control or optimization paper is used to support a field-performance claim such as robustness, deployment feasibility, or computational practicality
+- the manuscript cites only background papers for what is presented as a near-SOTA positioning statement
+
+When operating in Korean, give the diagnostic judgment in Korean first and present English titles/DOIs as evidence lines. Do not let the answer become an untranslated bibliography dump.
+
+## Korean evidence-line compression protocol
+
+When responding in Korean, compress each verified or discussed source into this 3-line block:
+
+- `Judgment:`
+- `Evidence title:`
+- `Why it matters:`
+
+Keep titles, venues, and DOIs on one compact evidence line.
+
 ## Output format
 
 ### Search objective
 State the research question or evidence need.
 
+### Verification scope
+State the search level used: `Level 0 manuscript-first`, `Level 1 metadata verify`, `Level 2 targeted proximity verify`, or `Level 3 optional expansion`.
+
 ### Source shortlist
-For each source:
+Default to 3-5 sources. For each source:
+- Status: verified / manuscript-only / unverifiable
 - Citation/identifier:
+- Support judgment:
+- Proximity judgment:
+- Safe claim boundary:
 - Authority tier:
-- Key contribution:
+- Evidence title:
+- Why it matters:
 - Limitation:
-- Relevance to user's work:
 - Action: read equation/table/benchmark/section X.
 
 ### Synthesis
 Explain what the literature collectively supports and what remains unresolved.
+
+### Optional expansion
+List only if the user asked for broader coverage.
 
 ### Citation risk check
 Flag any uncertain citation metadata, preprint status, missing DOI, or source-quality issue.

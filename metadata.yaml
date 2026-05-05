@@ -1,10 +1,10 @@
 official_suite_name: "Research Bot"
-version: "1.0.1"
+version: "1.0.2"
 canonical_entry_skill: "research-bot"
 created_by: "Beopsoo Kim"
 affiliation: "Department of Electrical and Computer Engineering, Inha University"
 license: "CC BY-NC-SA 4.0"
 language_support: ["Korean", "English"]
 intended_use: "Educational, research, and non-commercial laboratory use"
-created_by_ko: "김범수"
+created_by_ko: "김법수"
 affiliation_ko: "인하대학교 전기컴퓨터공학과"

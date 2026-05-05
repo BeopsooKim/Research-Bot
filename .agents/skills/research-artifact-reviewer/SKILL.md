@@ -108,6 +108,72 @@ Always provide:
 - 2 specific strengths, tied to the artifact's purpose.
 - 2 structural or logical improvement areas, not generic style complaints.
 
+## Blocking-flaw precedence rule
+
+If the artifact contains a flaw that could independently justify major revision or rejection, do not hide it behind the 2+2 structure.
+
+In that case:
+- state the blocking issue first
+- explain why it is blocking
+- then provide the normal 2 strengths and 2 improvement areas
+
+Blocking examples:
+- unclear uncertainty model in a method paper
+- unsupported headline claim
+- comparator framed unfairly
+- text/table/figure number inconsistency
+- methods/results mismatch
+- missing evidence for a claimed real-time or deployable property
+
+## Manuscript claim audit
+
+For papers, thesis chapters, and technical reports, explicitly inspect:
+- title and abstract headline claims
+- contribution sentence on the first page
+- strongest result claim in the results/discussion/conclusion
+- numeric consistency across prose, tables, and figures
+- whether limitations are visible enough to constrain interpretation
+
+If the artifact is in power systems, optimization, VPP scheduling, market operation, MCTS, MPC, or uncertainty-aware control, also inspect:
+- whether the uncertainty interface is stated clearly
+- whether the baseline is practical or idealized
+- whether runtime/real-time language is backed by deployment-relevant evidence
+- whether risk terms such as CVaR are defined and interpreted carefully
+
+## Anchor map protocol
+
+When exact line numbers are unavailable, anchor findings to the smallest stable manuscript location you can infer:
+
+- `title`
+- `abstract opening`
+- `abstract result sentence`
+- `abstract closing sentence`
+- `intro opening`
+- `intro ending`
+- `methods uncertainty paragraph`
+- `results paragraph`
+- `table caption / table value line`
+- `discussion runtime sentence`
+- `conclusion opening`
+
+Prefer these anchors over broad labels such as `Introduction` or `Discussion`.
+
+## Locality-before-generality rule
+
+- State the smallest local defect first, then explain the broader manuscript consequence.
+- For each major issue, use `Issue -> Anchor -> Why it matters -> Minimum safe revision`.
+- Do not fabricate line numbers when they are unavailable.
+
+## Blocking-flaw to edit-site bridge
+
+If you identify a blocking flaw, also state the first-impact anchors that must change first. Prefer headline locations:
+
+- `title`
+- `abstract closing sentence`
+- `results paragraph`
+- `table value line`
+- `conclusion opening`
+
 ## Anti-ghostwriting boundary
 
 Allowed:
@@ -124,13 +190,19 @@ Not allowed:
 ### Artifact type and stage
 Identify the artifact and stage.
 
+### Blocking issue first
+If none, write `None`.
+
+### First-impact anchors
+List the anchors that must change first if a blocking flaw exists.
+
 ### 2 strengths
 1.
 2.
 
 ### 2 structural/logical improvements
-1. Issue / why it matters / how to revise.
-2. Issue / why it matters / how to revise.
+1. Issue / anchor / why it matters / minimum safe revision.
+2. Issue / anchor / why it matters / minimum safe revision.
 
 ### Contribution and flow audit
 - Contribution clarity:

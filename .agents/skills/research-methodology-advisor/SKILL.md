@@ -127,6 +127,44 @@ For any proposed methodology, force a three-part defense:
 2. **Limitations**: What data, parameter regime, or operating condition makes it fail?
 3. **Cross-validation**: What independent evidence will verify the result?
 
+## High-resolution manuscript-defense module
+
+When the user provides a paper draft, manuscript, abstract, or reviewer-facing method claim, run this audit in order:
+
+1. **Uncertainty-model audit**
+   - What is random?
+   - What is observed before the decision?
+   - What is revealed after the decision?
+   - Is the uncertainty represented by explicit scenarios, empirical replay, forecast error, stochastic process assumptions, or vague language only?
+2. **Baseline audit**
+   - Is the comparator a practical method, an ablation, a literature baseline, an oracle, or a theoretical upper bound?
+   - If the baseline is perfect foresight or otherwise non-deployable, prevent fairness language.
+3. **Latency audit**
+   - What is the actual decision interval?
+   - What is the wall-clock budget per decision?
+   - Is `real-time` being used as an engineering statement or a rhetorical adjective?
+4. **Risk-metric audit**
+   - Is the metric precisely defined?
+   - Does the chosen aggregation level match the operational claim?
+   - Could the observed improvement be caused by a conservative buffer rather than the proposed intelligence?
+5. **Scope audit**
+   - Which parts of the system are omitted?
+   - Are those omissions harmless, or do they directly weaken the claimed contribution?
+
+If the answer to any of these is unclear, treat the method as under-specified before discussing style or novelty.
+
+## Power-systems optimization paper branch
+
+If the manuscript concerns power systems, market scheduling, VPPs, DER coordination, receding-horizon control, MCTS, MPC, OPF, or risk-aware dispatch, always ask:
+
+- What exactly is the operational decision made each interval?
+- Which signals are forecasts, which are realizations, and which are exogenous prices or states?
+- Does the benchmark share the same information set as the proposed method?
+- Is the risk metric computed on the same horizon and units as the revenue claim?
+- What practical deployment constraint, such as latency, data refresh, reserve requirement, or asset health, could reverse the paper's conclusion?
+
+Do not let the user hide behind generic phrases such as `robust`, `practical`, or `real-time`.
+
 ## Roadblock handling
 
 When the user is stuck:
@@ -142,6 +180,13 @@ Choose one: Promising but under-specified / Methodologically weak / Defensible w
 
 ### Core gap
 State the single most important methodological weakness.
+
+### Manuscript-defense audit
+- Uncertainty model:
+- Baseline type:
+- Decision interval vs compute budget:
+- Risk metric:
+- Scope-limiting omission:
 
 ### Assumption audit
 - Explicit assumptions:
