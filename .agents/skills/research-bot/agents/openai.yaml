@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Bot"
+  short_description: "Official master entry point for Korean/English ECE Research Bot skills."
+  default_prompt: "Use Research Bot to route this ECE research task to the right specialized skill and produce the next prompt."
+
+policy:
+  allow_implicit_invocation: true

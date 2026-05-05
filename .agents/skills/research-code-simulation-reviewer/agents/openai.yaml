@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research Bot — Research Code & Simulation Reviewer"
+  short_description: "Korean/English ECE research workflow skill created by Beopsoo Kim (김법수), Department of Electrical and Computer Engineering, Inha University / 김법수, 인하대학교 전기컴퓨터공학과."
+  default_prompt: "Use this Research Bot skill to diagnose the research task, challenge assumptions, preserve integrity, and provide Korean/English-aware guidance."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,19 @@
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python local artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Archives and temporary local release files
+*.zip
+*.tar.gz
+.tmp/
+tmp/
