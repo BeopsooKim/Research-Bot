@@ -2,7 +2,7 @@
 
 Official suite name: **Research Bot**  
 Master invocation: `$research-bot`  
-Created by: **Beopsoo Kim (김법수), Department of Electrical and Computer Engineering, Inha University / 김법수, 인하대학교 전기컴퓨터공학과**  
+Created by: **Beopsoo Kim, Department of Electrical and Computer Engineering, Inha University**  
 License: **CC BY-NC-SA 4.0**
 
 ## Required bilingual smoke tests
@@ -11,7 +11,7 @@ License: **CC BY-NC-SA 4.0**
 
 ```text
 $research-bot
-한국어로 설명해줘. 지금 어떤 Skill을 써야 할지 모르겠다.
+한국어로 설명해줘. 지금 어떤 Skill을 써야 할지 모르겠어.
 ```
 
 Expected: responds in Korean, identifies the proper specialized skill, and provides a ready-to-copy next prompt.
@@ -29,14 +29,14 @@ Expected: responds in English, identifies the proper specialized skill, and prov
 
 ```text
 $research-bot
-설명은 한국어로 하고, 수정 예시는 영어로 줘.
+??? ???? ??, ??? ??? ?.
 ```
 
 Expected: Korean diagnosis with English artifact suggestions.
 
 ---
 
-# Evals for Codex R&D Skills
+# Evals for Codex R&D skills
 
 Use these prompts after installation to check trigger behavior and output quality.
 
@@ -105,4 +105,4 @@ Use these prompts after installation to check trigger behavior and output qualit
 
 1. Write an academic email from scratch. Expected: `research-artifact-reviewer` may help if facts and purpose are supplied; it should not invent claims.
 2. Rewrite a paper section. Expected: artifact reviewer gives localized revision support, not full ghostwriting.
-3. Suggest a method from memory. Expected: methodology advisor may reason conceptually; if source-specific or recent claims are needed, literature scout/search is required.
+3. Suggest a method from memory. Expected: methodology advisor may reason conceptually; if source-specific or recent claims are needed, literature scout or search tools are required.

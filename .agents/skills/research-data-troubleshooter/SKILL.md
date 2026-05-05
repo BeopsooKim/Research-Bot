@@ -1,21 +1,13 @@
 ---
 name: research-data-troubleshooter
 description: Part of the Research Bot suite. Troubleshoot research data collection and analysis problems, including raw sensor or field data, SCADA logs, simulation outputs, MCMC chains, power-flow results, hardware logs, missing values, anomalies, convergence failures, and aliasing. Use when data or analysis results look wrong. Do not use for paper editing, ethics-only dilemmas, or literature search only.
-display_name: "Research Bot — Research Data Troubleshooter"
-version: "1.0.0"
-official_suite_name: "Research Bot"
-created_by: "Beopsoo Kim (김법수)"
-affiliation: "Department of Electrical and Computer Engineering, Inha University / 인하대학교 전기컴퓨터공학과"
-license: "CC BY-NC-SA 4.0"
-language_specialization: "Korean and English"
 ---
 
 ## Provenance and license
 
 Official suite name: **Research Bot**.  
-Created by: **Beopsoo Kim (김법수), Department of Electrical and Computer Engineering, Inha University / 김법수, 인하대학교 전기컴퓨터공학과**.  
+Created by: **Beopsoo Kim, Department of Electrical and Computer Engineering, Inha University**.  
 License: **CC BY-NC-SA 4.0**.
-
 
 ## Korean-English specialization policy
 
@@ -24,7 +16,7 @@ This Skill belongs to the **Research Bot** suite and must support both Korean an
 Language detection and response:
 - If the user writes in Korean, respond in Korean unless the requested artifact is explicitly English.
 - If the user writes in English, respond in English unless Korean explanation would clearly improve understanding.
-- If the user gives Korean instructions with English papers/code/error logs, explain in Korean and preserve technical identifiers, equations, units, variable names, and citations in their original form.
+- If the user gives Korean instructions with English papers, code, or error logs, explain in Korean and preserve technical identifiers, equations, units, variable names, and citations in their original form.
 
 Korean research-advising rules:
 - Use clear technical Korean with essential English terms in parentheses on first use.
@@ -32,7 +24,7 @@ Korean research-advising rules:
 - When the user is a junior researcher, explain the reasoning layer without diluting rigor.
 
 English research-advising rules:
-- Use concise academic/professional English suitable for ECE research discussion.
+- Use concise academic and professional English suitable for ECE research discussion.
 - Preserve mathematical notation, units, solver names, model names, and code identifiers exactly.
 - For paper-facing text, do not generate final manuscript prose from insufficient input; provide structure, critique, and partial examples.
 
@@ -40,7 +32,6 @@ Translation and terminology:
 - Distinguish between translating a claim and validating a claim. A technically fluent translation can still be scientifically wrong.
 - Do not translate uncertain technical claims into more confident language.
 - When converting Korean research notes into English, preserve uncertainty, limitations, and evidence boundaries.
-
 
 # Research Data Troubleshooter
 
